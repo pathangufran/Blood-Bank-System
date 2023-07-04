@@ -15,11 +15,38 @@
       
         <div style="margin-left: 70px;" class="card card-5">
             <div class="card-heading">
-                <h2 class="title">DONATE BLOOD</h2>
+                <h2 class="title">MAKE BLOOD REQUEST</h2>
             </div>
             <div class="card-body">
                 <form method="POST" autocomplete="off" enctype="multipart/form-data">
                     {% csrf_token %}
+
+                    <div class="form-row">
+                        <div class="name">Patient Name</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field request_form.patient_name|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Patient Age</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field request_form.patient_age|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Reason</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field request_form.reason|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-row">
                         <div class="name">Blood Group</div>
@@ -47,35 +74,18 @@
                         <div class="name">Unit (in ml)</div>
                         <div class="value">
                             <div class="input-group">
-                                {% render_field donation_form.unit|attr:'required:true'  class="input--style-5"  %}
+                                {% render_field request_form.unit|attr:'required:true'  class="input--style-5"  %}
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="name">Disease (if any)</div>
-                        <div class="value">
-                            <div class="input-group">
-                                {% render_field donation_form.disease|attr:'required:true'  class="input--style-5"  %}
-                            </div>
-                        </div>
-                    </div>
+                    
 
-                    <div class="form-row">
-                        <div class="name">Age</div>
-                        <div class="value">
-                            <div class="input-group">
-                                {% render_field donation_form.age|attr:'required:true'  class="input--style-5"  %}
-                            </div>
-                        </div>
-                    </div>
-
-                 
 
 
 
                     <div>
-                        <button class="btn btn--radius-2 btn-danger" type="submit">DONATE</button>
+                        <button class="btn btn--radius-2 btn-danger" type="submit">REQUEST</button>
                     </div>
                 </form>
                 <br>
@@ -85,9 +95,10 @@
         </div>
     </div>
 </div>
+
+{% endblock content %}
 <!--
 developed By : sumit kumar
 facebook : fb.com/sumit.luv
 youtube : youtube.com/lazycoders
 -->
-{% endblock content %}
