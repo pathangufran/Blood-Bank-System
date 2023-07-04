@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="static\base\css\home.css">
+</head>
+<body>
+    {% include "blood/navbar.html" %}
+    <div align="center" style="padding-top:100px;">
+
+        <h1>Nearest Blood Banks</h1>
+        
+    </div>
+    <div align="center" style="padding-top:50px;">
+        <table>
+            <tr>
+                <th>Sr No</th>
+                <th>Blood Bank</th>
+                <th>Category</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="/info1" style="color:black;">Poona Serological Institute Blood Bank</a></td>
+                <td>Charitable</td>
+                <td><a href="https://goo.gl/maps/vFtupLm7xBbZ9weu7"><img src="data:image/png;base64,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" width="50px" height="50px" alt=""></a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="/info2" style="color:black;">Kem Hospital Blood Bank</a></td>
+                <td>Charitable</td>
+                <td><a href="https://goo.gl/maps/DCUmXuuPWqpUmP857"><img src="data:image/png;base64,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" width="50px" height="50px" alt=""></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="" style="color:black;">Pune Chest & General Hospital Blood Centre, Pune
+                    Aundh Camp,, Pune, Pune, Maharashtra</a></td>
+                <td>Charitable</td>
+                <td><a href="https://goo.gl/maps/JVC9KGXJFZHebMAf8"><img src="data:image/png;base64,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" width="50px" height="50px" alt=""></a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="/info4" style="color:black;">Sasoon Blood Centre Pune</a></td>
+                <td>Charitable</td>
+                <td><a href="https://goo.gl/maps/WqL2VWpokuFnoGgQ6"><img src="data:image/png;base64,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" width="50px" height="50px" alt=""></a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="" style="color:black;">AUTUS BLOOD CENTRE</a></td>
+                <td>Charitable</td>
+                <td><a href="https://goo.gl/maps/CRsxprPs6xDdpcET9"><img src="data:image/png;base64,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" width="50px" height="50px" alt=""></a></td>
+            </tr>
+        </table>
+    </div>
+
+    
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</html>
